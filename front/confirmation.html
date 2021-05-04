@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>                              
+        html, body {
+            height: 100%;
+            width: 820px;
+            margin: 0 auto;
+            background-color: lightgray;
+        }
+ 
+        .global_container {
+            background-color: white;
+            -moz-box-shadow: 0px 0px 20px 8px #ffffff;
+            -webkit-box-shadow: 0px 0px 20px 8px #ffffff;
+            -o-box-shadow: 0px 0px 20px 8px #ffffff;
+            box-shadow: 0px 0px 20px 8px #ffffff;
+            filter:progid:DXImageTransform.Microsoft.Shadow(color=#ffffff, Direction=NaN, Strength=20);
+        }
+ 
+        header {
+            height: 125px;
+            margin-bottom: 25px;
+            -webkit-box-shadow: 0px 1px 40px rgba(0, 0, 0, 0.4);
+            -moz-box-shadow: 0px 1px 40px rgba(0,0,0,0.4);
+            box-shadow: 0px 1px 40px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            padding: 1px 5px 5px 2px;
+            -webkit-border-bottom-right-radius: 70px;
+            -webkit-border-bottom-left-radius: 70px;
+            -moz-border-radius-bottomright: 70px;
+            -moz-border-radius-bottomleft: 70px;
+            border-bottom-right-radius: 70px;
+            border-bottom-left-radius: 70px;
+ 
+            font-family: "Monotype Corsiva";
+        }
+    </style>
+</head>
+<body>
+    <div class="global_container">
+        <header>
+            Mail de confirmation
+        </header>
+        <div class="container">
+            <div id="infos">Message de: {name}</div><br><br>
+            <div id="message">{message}</div>
+        </div>
+    </div>
+</body>
+</html>
