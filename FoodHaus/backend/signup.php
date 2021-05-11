@@ -19,7 +19,7 @@
         <script data-search-pseudo-elements defer src="js/all.min.js"></script>
         <script src="js/feather.min.js"></script>
     </head>
-    <body class="bg-primary">
+    <body class="bg-dark">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -129,7 +129,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group mt-4 mb-0">
-                                                <button name="submit" class="btn btn-primary btn-block" type="submit">Create Account</button>
+                                                <button name="submit" class="btn btn-danger btn-block" type="submit">Create Account</button>
                                             </div>
                                         </form>
                                     </div>

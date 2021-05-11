@@ -13,17 +13,6 @@
 
         <!--PHP mail -->
 
-
-
-
-
-
-
-
-
-
-
-
         <div id="layoutSidenav_content">
             <main>
                 <div class="page-header pb-10 page-header-dark bg-gradient-primary-to-secondary">
@@ -40,18 +29,27 @@
                 <!--Start Form-->
                 <div class="container-fluid mt-n10">
                     <div class="card mb-4">
-                        <div class="card-header">E-Mail :</div>
+                        <div class="card-header">E-Mail :&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <a href="E-mail_history.php" title="Mail history" class="btn btn-white">
+                                <button class="btn btn-primary mr-2 my-1">E-Mail history</button>
+                            </a>
+                        </div>
+
                         <div class="card-body">
 
 
                             <form action="NewsLetter.php" method="POST">
                                 <div class="form-group">
+                                    <label for="post-content">Subject</label>
+                                    <input class="form-control" name='subject' required placeholder="This message is about..."></input>
+
                                     <label for="post-content">Your e-mail:</label>
-                                    <textarea class="form-control" name='message' required placeholder= "This message will be sent to all users..." id="post-content" rows="9"></textarea>
+                                    <textarea class="form-control" name='message' required placeholder="This message will be sent to all users..." id="post-content" rows="9"></textarea>
                                 </div>
 
                                 <button name="send-e-mail" class="btn btn-primary mr-2 my-1" type="submit">Send E-Mail</button>
+
                             </form>
+
                         </div>
                     </div>
                 </div>
@@ -91,16 +89,11 @@ if (isset($_POST['send-e-mail'])) {
 
 
         $message = ($_POST['message']);
+        $subject = ($_POST['subject']);
 
-
-        $subject = "Newsletter";
 
 
         //MAILER
-
-
-
-
 
         //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
@@ -131,6 +124,13 @@ if (isset($_POST['send-e-mail'])) {
     }
 
     echo "<p class='alert alert-success'>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; E-mail has been send successfully!</p>";
+    $sql = "INSERT INTO e_mails (msg_mail, time_mail) VALUES (:content, :date)";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([
+        ':content' => $message,
+        ':date' => date("M n, Y") . ' at ' . date("h:i A"),
+
+    ]);
 }
 
 ?>

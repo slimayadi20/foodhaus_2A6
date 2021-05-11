@@ -23,9 +23,12 @@
                                 <div class="page-header-icon"><i data-feather="activity"></i></div>
                                 <span>Dashboard || FoodHaus</span>
                             </h1>
+
+
                         </div>
                     </div>
                 </div>
+
 
                 <!--Table-->
                 <div class="container-fluid mt-n10">
@@ -91,7 +94,7 @@
                                 <div class="card-body d-flex align-items-center justify-content-between">
                                     <p>Menu</p>
                                     <?php
-                                    $sql = "SELECT * FROM ";    
+                                    $sql = "SELECT * FROM ";
                                     $stmt = $pdo->prepare($sql);
                                     $stmt->execute();
                                     $comment_count = $stmt->rowCount();
@@ -143,6 +146,7 @@
                             </div>
                         </div>
                         <!--End Table-->
+
 
             </main>
 

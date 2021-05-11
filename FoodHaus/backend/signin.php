@@ -21,7 +21,7 @@ if (isset($_SESSION['login']) || isset($_COOKIE['_uid_']) || isset($_COOKIE['_ui
     <script src="js/feather.min.js"></script>
 </head>
 
-<body class="bg-primary">
+<body class="bg-dark">
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
@@ -55,8 +55,7 @@ if (isset($_SESSION['login']) || isset($_COOKIE['_uid_']) || isset($_COOKIE['_ui
                                     $user_status = $user['user_status'];
                                     if ($user_status == 1) {
                                         $error_ban = "user Banned! <br> Please contact the administration for more details. ";
-                                    }
-                                    else if (password_verify($password, $user_password_hash) ) {
+                                    } else if (password_verify($password, $user_password_hash)) {
                                         $success = "Sign in successful!";
                                         if (!empty($_POST['check'])) {
                                             $user_id = $user['user_id'];
@@ -83,8 +82,11 @@ if (isset($_SESSION['login']) || isset($_COOKIE['_uid_']) || isset($_COOKIE['_ui
 
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header justify-content-center">
-                                    <h3 class="font-weight-light my-4">SIGN IN</h3>
+
+                                    <h3 class="font-weight-light my-4">WELCOME TO FOODHAUS</h3>
+
                                 </div>
+                               
                                 <div class="card-body">
                                     <?php
                                     if (isset($success)) {
@@ -98,7 +100,12 @@ if (isset($_SESSION['login']) || isset($_COOKIE['_uid_']) || isset($_COOKIE['_ui
                                     } else if (isset($error_password)) {
                                         echo "<p class='alert alert-danger'>{$error_password}</p>";
                                     }
-                                    ?>
+                                    ?> 
+                                    <div class="card-header justify-content-center">
+
+                                    <h3 class="font-weight-light my-6">SIGN IN</h3>
+
+                                </div>
                                     <form action="signin.php" method="POST">
                                         <div class="form-group">
                                             <label class="small mb-1" for="inputEmailAddress">Email</label>
@@ -116,14 +123,15 @@ if (isset($_SESSION['login']) || isset($_COOKIE['_uid_']) || isset($_COOKIE['_ui
                                         </div>
                                         <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                             <a class="small" href="#"></a>
-                                            <button name="submit" class="btn btn-primary btn-block" type="submit">SIGN IN</button>
+                                            <button name="submit" class="btn btn-danger btn-block" type="submit">SIGN IN</button>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="card-footer text-center">
                                     <div class="small">
                                         <a href="signup.php">Need an account? Sign up!</a> <br>
-                                        <a href="forgot-password.php">Forgot password</a>
+                                        <a href="forgot-password.php">Forgot password</a><br>
+                                        <a class="big" href="index.php">Home Page</a>
                                     </div>
                                 </div>
                             </div>

@@ -25,6 +25,23 @@
                                 <div class="page-header-icon"><i data-feather="plus"></i></div>
                             </a>
                         </div>
+
+                        <!--Seerch bar-->
+                        <form class="page-header-signup mb-2 mb-md-0" action="search.php" method="POST">
+                            <div class="form-row justify-content-center">
+                                <div class="col-lg-6 col-md-8">
+                                    <div class="form-group mr-0 mr-lg-2">
+                                        <input name="search-keyword" class="form-control form-control-solid rounded-pill" type="text" placeholder="Search User..." />
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4">
+                                    <button class="btn btn-teal btn-block btn-marketing rounded-pill" type="submit">Search</button>
+                                </div>
+                            </div>
+                        </form>
+
+
+                        <br><br>
                     </div>
                 </div>
                 <!--Start Table-->
