@@ -1,2 +1,5 @@
 # foodhaus_2A6
-il back needs double check w ili yalka wakt ihabet ha w ibadelha francais 
+path back be like :
+http://localhost/foodhaus/backend/....php
+path front be like :
+http://localhost/foodhaus/index.php
